@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://sample_project/sample_main_node.gd" type="Script" id=1]
+[ext_resource path="res://license_dialog.tscn" type="PackedScene" id=2]
+
+[node name="TestMainNode" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="LicenseDialog" parent="." instance=ExtResource( 2 )]
+label_text = "Clicking one of the buttons below will display licensing information for individual components of  and the engine it is built on, the Godot Engine."
+
+[node name="Label" type="Label" parent="."]
+margin_left = 129.934
+margin_top = 497.714
+margin_right = 490.934
+margin_bottom = 511.714
+text = "This window will close after the popup window is closed."
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="popup_hide" from="LicenseDialog" to="." method="_on_LicenseDialog_popup_hide"]
