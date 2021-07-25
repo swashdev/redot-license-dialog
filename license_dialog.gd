@@ -27,6 +27,18 @@ export(String, MULTILINE) onready var label_text = "Clicking one of the " + \
 		"components of GAME_NAME and the engine it is built on, the Godot " + \
 		"Engine." setget set_label_text, get_label_text
 
+
+# These variables act as shortcuts to nodes within the LicenseDialog which we
+# will be accessing frequently.  The reason we do this is that it's cheaper to
+# get the node only once and store its reference in a variable than it is to
+# get it every time we need to access it, which is helpful for project managers
+# who want to optimize their code.
+onready var _info_label = $Label
+onready var _component_list = $ComponentList
+onready var _attribution_popup = $AttributionDialog
+onready var _attribution_textbox = $AttributionDialog/TextBox
+
+
 # A dictionary which will store licensing information for the game, parsed from
 # the game copyright file, and a corresponding TreeItem which will display this
 # information.
@@ -50,10 +62,12 @@ func _ready():
 	var game_name = project_name
 	if game_name == "":
 		game_name = ProjectSettings.get_setting( "application/config/name" )
-	$Label.set_text( label_text.replace( "GAME_NAME", game_name ) )
+
+	var parsed_text = label_text.replace( "GAME_NAME", game_name )
+	_info_label.set_text( parsed_text )
+
 	# Create the root for the component list tree.
-	var component_list = $ComponentList
-	var root = component_list.create_item()
+	var root = _component_list.create_item()
 
 	# Populate the game components & licensing information from the copyright
 	# file.
@@ -63,23 +77,23 @@ func _ready():
 		push_warning( "Couldn't read any copyright data for this game!" )
 	else:
 		# Create a subtree for the project components list.
-		project_components_tree = component_list.create_item( root )
+		project_components_tree = _component_list.create_item( root )
 		project_components_tree.set_text( 0, game_name )
 		project_components_tree.set_selectable( 0, false )
 		for component in project_components:
-			var component_item = component_list.create_item(
+			var component_item = _component_list.create_item(
 					project_components_tree )
 			component_item.set_text( 0, component )
 
 	# Create a subtree for the Godot Engine components list.
-	_godot_components_tree = component_list.create_item( root )
+	_godot_components_tree = _component_list.create_item( root )
 	_godot_components_tree.set_text( 0, "Godot Engine" )
 	_godot_components_tree.set_selectable( 0, false )
 
 	# Populate the Godot Engine components subtree.
 	var components: Array = Engine.get_copyright_info()
 	for component in components:
-		var component_item = component_list.create_item( _godot_components_tree
+		var component_item = _component_list.create_item( _godot_components_tree
 				)
 		component_item.set_text( 0, component["name"] )
 		_godot_components[component["name"]] = component["parts"]
@@ -94,7 +108,7 @@ func _ready():
 		_licenses[keys[index]] = license_info[keys[index]]
 	
 	# Create a subtree for the licenses list.
-	_licenses_tree = component_list.create_item( root )
+	_licenses_tree = _component_list.create_item( root )
 	_licenses_tree.set_text( 0, "Licenses" )
 	_licenses_tree.set_selectable( 0, false )
 
@@ -105,7 +119,7 @@ func _ready():
 	keys.sort()
 	key_count = keys.size()
 	for index in key_count:
-		var license_item = component_list.create_item( _licenses_tree )
+		var license_item = _component_list.create_item( _licenses_tree )
 		license_item.set_text( 0, keys[index] )
 		license_item.set_selectable( 0, true )
 
@@ -138,7 +152,7 @@ func get_label_text( replace_name: bool = false ) -> String:
 
 
 func _on_ComponentList_item_selected():
-	var selected: TreeItem = $ComponentList.get_selected()
+	var selected: TreeItem = _component_list.get_selected()
 	var parent: TreeItem = selected.get_parent()
 	var title: String = selected.get_text( 0 )
 	var parent_title: String = parent.get_text( 0 )
@@ -171,11 +185,11 @@ func _display_license_info( var key: String ):
 
 
 func _popup_attribution_dialog( title: String, text: String ):
-	$AttributionDialog.set_title( title )
-	$AttributionDialog/TextBox.set_text( text )
-	$AttributionDialog/TextBox.scroll_vertical = 0
-	$AttributionDialog/TextBox.scroll_horizontal = 0
-	$AttributionDialog.popup_centered()
+	_attribution_popup.set_title( title )
+	_attribution_textbox.set_text( text )
+	_attribution_textbox.scroll_vertical = 0
+	_attribution_textbox.scroll_horizontal = 0
+	_attribution_popup.popup_centered()
 
 
 
