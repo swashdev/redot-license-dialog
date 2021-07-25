@@ -1,8 +1,8 @@
 # This is a sample COPYRIGHT.txt file for a Godot Engine project which uses the
-# Godot Universal Inclusion of Licenses Dilaog (GUILD).  The first entry marked
-# "Format" contains a link to a page which gives details on how this file
-# should be formatted.  The COPYRIGHT.txt file used by the Godot Engine is also
-# a good reference for the formatting of this file.
+# Godot Unofficial License Dilaog (GUiLD).  The first entry marked "Format"
+# contains a link to a page which gives details on how this file should be
+# formatted.  The COPYRIGHT.txt file used by the Godot Engine is also a good
+# reference for the formatting of this file.
 #
 # If the Copyright File parameter in your LicenseDialog starts with "res://",
 # indicating that the file is stored as a resource in the game rather than in
@@ -14,22 +14,26 @@
 #
 # You may include the licensing information contained herein (with
 # modifications where appropriate) as an attribution notice if you choose to
-# use GUILD in your game or other project; however, as it has been released
+# use GUiLD in your game or other project; however, as it has been released
 # into the public domain, you are not required to do so.
 
 -----------------------------------------------------------------------
 
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
-Upstream-Name: Generic Godot Engine License Dialog (GGELD)
+Upstream-Name: Godot Unofficial License Dialog (GUiLD)
 Upstream-Contact: Philip Pavlick <swashdev@pm.me>
 Source: https://git.sr.ht/~swashberry/godot-license-dialog
 
 Files: ./license_dialog.gd
  ./license_dialog.tscn
- ./project.godot
+Comment: Godot Unofficial License Dialog (GUiLD)
+Copyright: 2021 Philip Pavlick
+License: Unlicense
+
+Files: ./project.godot
  ./sample_project/sample_main_node.gd
  ./sample_project/sample_main_node.tscn
-Comment: Generic Godot Engine License Dialog (GGELD)
+Comment: GUiLD Sample Project
 Copyright: 2021 Philip Pavlick
 License: Unlicense
 

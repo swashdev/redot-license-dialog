@@ -15,7 +15,7 @@ _global_script_class_icons={
 
 [application]
 
-config/name="Godot Universal Inclusion of Licenses Dialog (GUILD)"
+config/name="GUiLD Sample Project"
 run/main_scene="res://sample_project/sample_main_node.tscn"
 
 [rendering]

@@ -19,7 +19,7 @@ anchor_left = 0.01
 anchor_top = 0.01
 anchor_right = 0.99
 anchor_bottom = 0.1
-text = "Clicking one of the buttons below will display licensing information for individual components of Generic Godot Engine License Dialog and the engine it is built on, the Godot Engine."
+text = "Clicking one of the buttons below will display licensing information for individual components of Godot Unofficial License Dialog (GUiLD) and the engine it is built on, the Godot Engine."
 autowrap = true
 __meta__ = {
 "_edit_use_anchors_": false
@@ -38,7 +38,6 @@ __meta__ = {
 }
 
 [node name="AttributionDialog" type="AcceptDialog" parent="."]
-visible = true
 margin_right = 600.0
 margin_bottom = 400.0
 window_title = "This window title will be replaced with the title of an attribution notice."
