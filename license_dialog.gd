@@ -1,4 +1,3 @@
-tool
 extends WindowDialog
 # A dialog which displays a human-readable list of attribution notices.
 
@@ -13,19 +12,12 @@ enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 
 # The name of the project which will be used.  If left blank, this value will be
 # replaced with the name of the Godot Engine project.
-export(String) onready var project_name = "" setget set_project_name, \
+export(String) var project_name = "" setget set_project_name, \
 		get_project_name
 
 # The path to a file containing licensing information for the game.
-export(String, FILE, "*.txt") onready var copyright_file = \
+export(String, FILE, "*.txt") var copyright_file = \
 		"res://COPYRIGHT.txt" setget set_copyright_file, get_copyright_file
-
-# The text for the label which appears above the components list.  The text
-# "GAME_NAME" will be replaced with the contents of `project_name`.
-export(String, MULTILINE) onready var label_text = "Clicking one of the " + \
-		"buttons below will display licensing information for individual " + \
-		"components of GAME_NAME and the engine it is built on, the Godot " + \
-		"Engine." setget set_label_text, get_label_text
 
 
 # These variables act as shortcuts to nodes within the LicenseDialog which we
@@ -62,9 +54,6 @@ func _ready():
 	var game_name = project_name
 	if game_name == "":
 		game_name = ProjectSettings.get_setting( "application/config/name" )
-
-	var parsed_text = label_text.replace( "GAME_NAME", game_name )
-	_info_label.set_text( parsed_text )
 
 	# Create the root for the component list tree.
 	var root = _component_list.create_item()
@@ -141,14 +130,7 @@ func get_copyright_file() -> String:
 
 
 func set_label_text( text: String ):
-	label_text = text
-
-
-func get_label_text( replace_name: bool = false ) -> String:
-	if replace_name:
-		return label_text
-	else:
-		return label_text.replace( "GAME_NAME", project_name )
+	_info_label.text = text
 
 
 func _on_ComponentList_item_selected():
