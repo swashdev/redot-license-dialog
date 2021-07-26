@@ -16,8 +16,8 @@ export(String) var project_name = "" setget set_project_name, \
 		get_project_name
 
 # The path to a file containing licensing information for the game.
-export(String, FILE, "*.txt") var copyright_file = \
-		"res://COPYRIGHT.txt" setget set_copyright_file, get_copyright_file
+export(String, FILE, "*.txt") var copyright_file =  "" \
+		setget set_copyright_file, get_copyright_file
 
 
 # These variables act as shortcuts to nodes within the LicenseDialog which we
@@ -60,19 +60,20 @@ func _ready():
 
 	# Populate the game components & licensing information from the copyright
 	# file.
-	_read_copyright_file()
+	if copyright_file != "":
+		_read_copyright_file()
 
-	if project_components.size() == 0:
-		push_warning( "Couldn't read any copyright data for this game!" )
-	else:
-		# Create a subtree for the project components list.
-		project_components_tree = _component_list.create_item( root )
-		project_components_tree.set_text( 0, game_name )
-		project_components_tree.set_selectable( 0, false )
-		for component in project_components:
-			var component_item = _component_list.create_item(
-					project_components_tree )
-			component_item.set_text( 0, component )
+		if project_components.size() == 0:
+			push_warning( "Couldn't read any copyright data for this game!" )
+		else:
+			# Create a subtree for the project components list.
+			project_components_tree = _component_list.create_item( root )
+			project_components_tree.set_text( 0, game_name )
+			project_components_tree.set_selectable( 0, false )
+			for component in project_components:
+				var component_item = _component_list.create_item(
+						project_components_tree )
+				component_item.set_text( 0, component )
 
 	# Create a subtree for the Godot Engine components list.
 	_godot_components_tree = _component_list.create_item( root )
