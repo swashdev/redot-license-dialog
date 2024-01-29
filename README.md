@@ -58,8 +58,8 @@ How To Use It
 Before you do anything else, please read the [Disclaimer](#disclaimer) below to
 make sure you fully understand what GUiLD does and does not do.
 
-To use GUiLD in your project, copy the [license\_dialog.gd][script] and
-[license\_dialog.tscn][scene] files into your Godot Engine project folder.
+To use GUiLD in your project, copy the [script](license_dialog.gd) and
+[scene](license_dialog.tscn) files into your Godot Engine project folder.
 These files will give you a node named `LicenseDialog` which can be used as a
 regular popup dialog that will display the licensing information for your
 project.
