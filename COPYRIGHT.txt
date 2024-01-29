@@ -32,6 +32,7 @@ Copyright: 2021, 2024 Philip Pavlick
 License: Unlicense
 
 Files: ./project.godot
+ ./export_presets.cfg
  ./sample_project/sample_main_node.gd
  ./sample_project/sample_main_node.tscn
 Comment: Godot Unofficial License Dialog Sample Project
