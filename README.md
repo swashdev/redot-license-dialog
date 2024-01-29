@@ -84,10 +84,10 @@ you are doing.
 Use of GUiLD in your project may not in itself be sufficient in order to remain
 compliant with certain software licenses--some licenses will require more than
 an attribution notice and/or inclusion of the full text of a license with the
-software.  For example, copyleft licenses such as the [GNU General Public
-Licenses][GPL] may require you to distribute your source code if you use
-software released under such licenses.  Be sure to read the licenses for any
-third-party materials carefully before using them in your project.
+software.  For example, software using [copyleft] licenses such as the [GNU
+General Public Licenses][GPL] may require you to distribute your source code if
+you incorporate portions of their source code.  Be sure to read the licenses
+for any third-party materials carefully before using them in your project.
 
 The author of this software is not affiliated with the Godot Engine project and
 does not represent the Godot Engine project in any capacity; GUiLD is not
@@ -110,4 +110,5 @@ OTHER DEALINGS IN THE SOFTWARE.
 [godot source]: https://github.com/godotengine/godot/
 [debian license file format]: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 [Getting Started]: docs/GETTING_STARTED.md
+[copyleft]: https://en.wikipedia.org/wiki/Copyleft
 [GPL]: https://en.wikipedia.org/wiki/GNU_General_Public_License
