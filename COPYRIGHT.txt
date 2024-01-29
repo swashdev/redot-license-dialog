@@ -23,7 +23,7 @@
 Format: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 Upstream-Name: Godot Unofficial License Dialog
 Upstream-Contact: Philip Pavlick <swashdev@pm.me>
-Source: https://git.sr.ht/~swashberry/godot-license-dialog
+Source: https://github.com/swashdev/godot-license-dialog
 
 Files: ./license_dialog.gd
  ./license_dialog.tscn

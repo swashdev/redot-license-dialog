@@ -2,7 +2,7 @@ extends WindowDialog
 # A dialog which displays a human-readable list of attribution notices.
 
 
-# Source: https://git.sr.ht/~swashberry/godot-license-dialog
+# Source: https://github.com/swashdev/godot-license-dialog
 # Version 0.0.1
 
 
