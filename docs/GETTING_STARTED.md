@@ -20,11 +20,10 @@ read the [Godot Engine documentation](https://docs.godotengine.org/en/stable/).
 
 If you haven't already, start by downloading the project.  The only files you
 really need are `license_dialog.gd` (the script file) and `license_dialog.tscn`
-(the scene file for the `LicenseDialog` node) from the root folder.  Because
-the Godot Unofficial License Dialog is public domain software, it is not
-necessary to download `COPYRIGHT.txt` or the `UNLICENSE` file, and the rest of
-the files in the root folder are either documentation or part of the sample
-project.
+(the scene file for the `LicenseDialog` node) from the root folder.  Despite
+the Godot Unofficial License Dialog being public domain software, you may need
+to retain attribution and licensing notices in some jurisdictions, so you may
+want to download the `COPYRIGHT.txt` file as well.
 
 Drop the files into your Godot Engine project folder.  Although you can place
 them in any folder you wish, I recommend placing them in the same folder to
