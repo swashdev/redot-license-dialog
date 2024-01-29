@@ -101,6 +101,24 @@ a lot by deleting the `_read_copyright_file` function and any references to it
 from the `license_dialog.gd` file, as this is the longest function in that
 script.
 
+##### Embedding the Copyright File
+
+The `COPYRIGHT.txt` file is convenient for attribution and licensing purposes,
+but it's designed to be machine-readable rather than human-readable, so you may
+feel that there's no reason to include it as a separate file in the project.
+
+Fortunately, Godot allows us to embed this file in the exported binary so that
+you don't have to include a copy of it with every distribution.  All you have
+to do is set the copyright file's name so that it begins with `res://`, as if
+it's any other imported resource, and include it in your project's export
+template.
+
+To include the copyright file in your export template, open the export template
+in the "Export Project" menu, navigate to the "Resources" tab, and include the
+name of the file under "Filters to export non-resource files/folders" as in
+the screenshot below.
+
+<img style = "margin: 0 auto" src = "screenshots/getting_started_03.png" title = "The Export menu in the Godot Engine, showing the Resources tab with a file named COPYRIGHT.txt to be included as a non-resource file in the export." />
 
 ### Implementing the Popup
 
