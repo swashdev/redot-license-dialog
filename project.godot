@@ -10,12 +10,11 @@ config_version=4
 
 _global_script_classes=[  ]
 _global_script_class_icons={
-
 }
 
 [application]
 
-config/name="GUiLD Sample Project"
+config/name="Godot Unofficial License Dialog Sample Project"
 run/main_scene="res://sample_project/sample_main_node.tscn"
 
 [rendering]

@@ -18,4 +18,5 @@ text = "This window will close after the popup window is closed."
 __meta__ = {
 "_edit_use_anchors_": false
 }
+
 [connection signal="popup_hide" from="LicenseDialog" to="." method="_on_LicenseDialog_popup_hide"]

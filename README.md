@@ -14,10 +14,9 @@ from source, this licensing information may change, as different platforms and
 different configurations of the engine use different modules, and that means
 your attribution notices need to adapt as well.
 
-The Godot Unofficial License Dialog, or GUiLD for short, is a simple node for
-Godot Engine projects which parses and displays licensing information for your
-project in a convenient and human-readable format which your users can access
-in-game.
+The Godot Unofficial License Dialog is a simple node for Godot Engine projects
+which parses and displays licensing information for your project in a
+convenient and human-readable format which your users can access in-game.
 
 How It Works
 ------------
@@ -35,10 +34,11 @@ it gives you still needs to be displayed in a clear and human-readable format.
 As it stands, what the engine is giving you is arrays of dictionaries which
 also contain arrays.
 
-What GUiLD does is read in the licensing information from the engine and use
-it to create a popup dialog which displays a list of buttons that the user can
-press to view attribution notices and the full text of any license for any
-third-party modules which the Godot Engine might be using.
+What the Godot Unofficial License Dialog does is read in the licensing
+information from the engine and use it to create a popup dialog which displays
+a list of buttons that the user can press to view attribution notices and the
+full text of any license for any third-party modules which the Godot Engine
+might be using.
 
 As an extra feature, the popup dialog will also read copyright information for
 _your_ project and display that in a separate list from the copyright
@@ -56,9 +56,9 @@ How To Use It
 -------------
 
 Before you do anything else, please read the [Disclaimer](#disclaimer) below to
-make sure you fully understand what GUiLD does and does not do.
+make sure you fully understand what Godot Unofficial License Dialog does and does not do.
 
-To use GUiLD in your project, copy the [script](license_dialog.gd) and
+To use Godot Unofficial License Dialog in your project, copy the [script](license_dialog.gd) and
 [scene](license_dialog.tscn) files into your Godot Engine project folder.
 These files will give you a node named `LicenseDialog` which can be used as a
 regular popup dialog that will display the licensing information for your
@@ -70,28 +70,29 @@ Started file][Getting Started] in the docs folder.
 Disclaimer
 ----------
 
-The Godot Unofficial License Dialog (GUiLD) **does not** check for
-compatibility between licenses and **does not** guarantee that you will be
-fully complaint with the licenses for any software you may be using in your
-project.  YOU ARE SOLELY RESPONSIBLE FOR ENSURING THAT YOU ARE COMPLIANT WITH
-THIRD-PARTY SOFTWARE LICENSES!
+The Godot Unofficial License Dialog **does not** check for compatibility
+between licenses and **does not** guarantee that you will be fully complaint
+with the licenses for any software you may be using in your project.  YOU ARE
+SOLELY RESPONSIBLE FOR ENSURING THAT YOU ARE COMPLIANT WITH THIRD-PARTY
+SOFTWARE LICENSES!
 
-GUiLD **does not** include attribution notices or license texts automatically;
-it only pulls this information from the Godot Engine and from information which
-you yourself supply.  Please read the documentation carefully so you know what
-you are doing.
+The Godot Unofficial License Dialog **does not** include attribution notices or
+license texts automatically; it only pulls this information from the Godot
+Engine and from information which you yourself supply.  Please read the
+documentation carefully so you know what you are doing.
 
-Use of GUiLD in your project may not in itself be sufficient in order to remain
-compliant with certain software licenses--some licenses will require more than
-an attribution notice and/or inclusion of the full text of a license with the
-software.  For example, software using [copyleft] licenses such as the [GNU
-General Public Licenses][GPL] may require you to distribute your source code if
-you incorporate portions of their source code.  Be sure to read the licenses
-for any third-party materials carefully before using them in your project.
+Use of the Godot Unofficial License Dialog in your project may not in itself be
+sufficient in order to remain compliant with certain software licenses--some
+licenses will require more than an attribution notice and/or inclusion of the
+full text of a license with the software.  For example, software using
+[copyleft] licenses such as the [GNU General Public Licenses][GPL] may require
+you to distribute your source code if you incorporate portions of their source
+code.  Be sure to read the licenses for any third-party materials carefully
+before using them in your project.
 
 The author of this software is not affiliated with the Godot Engine project and
-does not represent the Godot Engine project in any capacity; GUiLD is not
-endorsed by the Godot Engine project.
+does not represent the Godot Engine project in any capacity; the Godot
+Unofficial License Dialog is not endorsed by the Godot Engine project.
 
 THE AUTHOR AND CONTRIBUTORS OF THIS SOFTWARE ARE NOT LAWYERS AND ARE NOT
 PROVIDING LEGAL ADVICE!  THE USE OF THIS SOFTWARE IN ANY PROJECT IS NOT

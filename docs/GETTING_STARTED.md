@@ -1,7 +1,7 @@
 # Getting Started
 
 This file will give you basic setup instructions so you can use the Godot
-Unofficial License Dialog (GUiLD) in your game or other project.
+Unofficial License Dialog in your game or other project.
 
 It is recommended that you read this document in a Markdown reader or on the
 project's [GitHub](https://github.com/swashdev/godot-license-dialog), as
@@ -21,9 +21,10 @@ read the [Godot Engine documentation](https://docs.godotengine.org/en/stable/).
 If you haven't already, start by downloading the project.  The only files you
 really need are `license_dialog.gd` (the script file) and `license_dialog.tscn`
 (the scene file for the `LicenseDialog` node) from the root folder.  Because
-GUiLD is public domain software, it is not necessary to download
-`COPYRIGHT.txt` or the `UNLICENSE` file, and the rest of the files in the
-root folder are either documentation or part of the sample project.
+the Godot Unofficial License Dialog is public domain software, it is not
+necessary to download `COPYRIGHT.txt` or the `UNLICENSE` file, and the rest of
+the files in the root folder are either documentation or part of the sample
+project.
 
 Drop the files into your Godot Engine project folder.  Although you can place
 them in any folder you wish, I recommend placing them in the same folder to
@@ -76,9 +77,9 @@ license texts for your project (*not* the Godot Engine).
 The file in question needs to be formatted in a specific way in order for the
 `LicenseDialog` to read it properly.  More detailed information will be given in
 future versions of this documentation, but for now you can use [the sample
-COPYRIGHT.txt] included with GUiLD or [the Godot Engine's COPYRIGHT.txt] as a
-reference, or refer to the format specification [here][Debian copyright file
-format].
+COPYRIGHT.txt] included with the Godot Unofficial License Dialog or [the Godot
+Engine's COPYRIGHT.txt] as a reference, or refer to the format specification
+[here][Debian copyright file format].
 
 [the sample COPYRIGHT.txt]: ../COPYRIGHT.txt
 [the Godot Engine's COPYRIGHT.txt]: https://github.com/godotengine/godot/blob/master/COPYRIGHT.txt
@@ -87,9 +88,9 @@ format].
 **Note:**
 Strictly speaking, you don't _need_ to include a copyright file with your
 project.  However, I recommend that you do so, especially if you are using
-third-party assets in your project, as you can take advantage of GUiLD to
-display licensing information for your project, including third-party assets,
-as well as the Godot Engine.  
+third-party assets in your project, as you can take advantage of the Godot
+Unofficial License Dialog to display licensing information for your project,
+including third-party assets, as well as the Godot Engine.  
 If you choose not to include a copyright file, leave the Copyright File variable
 blank.  If you specify a file which does not exist, your project will spit out a
 warning when it is run letting you know that the `LicenseDialog` could not find
