@@ -3,7 +3,7 @@ extends WindowDialog
 
 
 # Source: https://github.com/swashdev/godot-license-dialog
-# Version 3.5.1 - Tested on Godot 3.5.3-stable
+# Version 4.0.0-dev.1 - Currently in development.
 
 
 # An enum used by the `_read_copyright_file` function to determine what kind of
