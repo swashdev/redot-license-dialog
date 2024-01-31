@@ -1,4 +1,4 @@
-extends WindowDialog
+extends Window
 # A dialog which displays a human-readable list of attribution notices.
 
 
@@ -12,12 +12,12 @@ enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 
 # The name of the project which will be used.  If left blank, this value will be
 # replaced with the name of the Godot Engine project.
-export(String) var project_name = "" setget set_project_name, \
-		get_project_name
+@export var project_name: String = "" : \
+		set = set_project_name, get = get_project_name
 
 # The path to a file containing licensing information for the game.
-export(String, FILE, "*.txt") var copyright_file =  "" \
-		setget set_copyright_file, get_copyright_file
+@export_file var copyright_file =  "" : \
+		set = set_copyright_file, get = get_copyright_file
 
 
 # These variables act as shortcuts to nodes within the LicenseDialog which we
@@ -25,10 +25,10 @@ export(String, FILE, "*.txt") var copyright_file =  "" \
 # get the node only once and store its reference in a variable than it is to
 # get it every time we need to access it, which is helpful for project managers
 # who want to optimize their code.
-onready var _info_label = $Label
-onready var _component_list = $ComponentList
-onready var _attribution_popup = $AttributionDialog
-onready var _attribution_textbox = $AttributionDialog/TextBox
+@onready var _info_label = $Label
+@onready var _component_list = $ComponentList
+@onready var _attribution_popup = $AttributionDialog
+@onready var _attribution_textbox = $AttributionDialog/TextBox
 
 
 # A dictionary which will store licensing information for the game, parsed from
@@ -137,19 +137,19 @@ func set_label_text( text: String ):
 func _on_ComponentList_item_selected():
 	var selected: TreeItem = _component_list.get_selected()
 	var parent: TreeItem = selected.get_parent()
-	var title: String = selected.get_text( 0 )
+	var comp_title: String = selected.get_text( 0 )
 	var parent_title: String = parent.get_text( 0 )
 	
 	if parent_title == "Godot Engine":
-		_display_game_component_info( title, _godot_components[title] )
+		_display_game_component_info(comp_title, _godot_components[comp_title])
 	elif parent_title == "Licenses":
-		_display_license_info( title )
+		_display_license_info(comp_title)
 	else:
-		_display_game_component_info( title, project_components[title] )
+		_display_game_component_info(comp_title, project_components[comp_title])
 
 
-func _display_game_component_info( var title: String, component: Array ):
-	var text: String = title
+func _display_game_component_info(comp_title: String, component: Array):
+	var text: String = comp_title
 
 	for part in component:
 		text += "\n\nFiles:"
@@ -160,15 +160,15 @@ func _display_game_component_info( var title: String, component: Array ):
 			text += "\nCopyright (c) %s" % copyright
 		text += "\nLicense: %s" % part["license"]
 
-	_popup_attribution_dialog( title, text )
+	_popup_attribution_dialog(comp_title, text)
 
 
-func _display_license_info( var key: String ):
+func _display_license_info(key: String):
 	_popup_attribution_dialog( key, _licenses[key] )
 
 
-func _popup_attribution_dialog( title: String, text: String ):
-	_attribution_popup.set_title( title )
+func _popup_attribution_dialog( component: String, text: String ):
+	_attribution_popup.set_title( component )
 	_attribution_textbox.set_text( text )
 	_attribution_textbox.scroll_vertical = 0
 	_attribution_textbox.scroll_horizontal = 0
@@ -179,18 +179,17 @@ func _popup_attribution_dialog( title: String, text: String ):
 # Reads in the copyright file given by `copyright_file` and parses it
 # to fill the `_game_copyright_info` and `_licenses` variables.
 func _read_copyright_file():
-	var f: File = File.new()
-	var err = f.open( copyright_file, File.READ )
+	var f: FileAccess = FileAccess.open( copyright_file, FileAccess.READ )
 
-	if err != OK:
+	if !f:
 		push_warning( "Couldn't find copyright file! Got error %d trying to open %s"
-				% [err, copyright_file] )
+				% [FileAccess.get_open_error(), copyright_file] )
 		return
 
-	var file_paragraph: PoolStringArray = []
-	var comment_paragraph: PoolStringArray = []
-	var copyright_paragraph: PoolStringArray = []
-	var license_paragraph: PoolStringArray = []
+	var file_paragraph: PackedStringArray = []
+	var comment_paragraph: PackedStringArray = []
+	var copyright_paragraph: PackedStringArray = []
+	var license_paragraph: PackedStringArray = []
 
 	var reading: int
 	var line_count: int = 0
@@ -209,7 +208,7 @@ func _read_copyright_file():
 			got_first_file = true
 			reading_file_paragraph = true
 			reading = _FILE
-			line.erase( 0, 7 )
+			line = line.right( -7 )
 			file_paragraph = [line.strip_edges()]
 			#print_debug( "Line %d: Started reading files w/ %s"
 			#		% [line_count, line.strip_edges()] )
@@ -218,7 +217,7 @@ func _read_copyright_file():
 			got_first_file = true
 			reading_file_paragraph = true
 			reading = _COMMENT
-			line.erase( 0, 9 )
+			line = line.right( -9 )
 			comment_paragraph = [line.strip_edges()]
 			#print_debug( "Line %d: Started reading comments w/ %s"
 			#		% [line_count, line.strip_edges()] )
@@ -227,7 +226,7 @@ func _read_copyright_file():
 			got_first_file = true
 			reading_file_paragraph = true
 			reading = _COPYRIGHT
-			line.erase( 0, 11 )
+			line = line.right( -11 )
 			copyright_paragraph = [line.strip_edges()]
 			#print_debug( "Line %d: Started reading copyrights w/ %s"
 			#		% [line_count, line.strip_edges()] )
@@ -236,7 +235,7 @@ func _read_copyright_file():
 			got_first_file = true
 			reading_file_paragraph = true
 			reading = _LICENSE
-			line.erase( 0, 9 )
+			line = line.right( -9 )
 			license_paragraph = [line.strip_edges()]
 			#print_debug( "Line %d: Started reading licenses w/ %s"
 			#		% [line_count, line.strip_edges()] )
@@ -352,7 +351,7 @@ func _read_copyright_file():
 				push_warning( "Malformed license at line %d in %s!  Reached next license before license finished!"
 						% [line_count, copyright_file] )
 			else:
-				line.erase( 0, 9 )
+				line = line.right( -9 )
 				short_license = line.strip_edges()
 				license = ""
 				reading_license = true
