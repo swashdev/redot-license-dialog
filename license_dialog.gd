@@ -4,7 +4,7 @@ extends Window
 
 # Source: https://github.com/swashdev/godot-license-dialog
 # Version 4.0.0
-# Requires Godot 4.0-stable - Tested on Godot 4.1.3-stable
+# Requires Godot 4.0-stable - Tested on Godot 4.2-stable
 
 
 # An enum used by the `_read_copyright_file` function to determine what kind of

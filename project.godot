@@ -12,7 +12,7 @@ config_version=5
 
 config/name="Godot Unofficial License Dialog Sample Project"
 run/main_scene="res://sample_project/sample_main_node.tscn"
-config/features=PackedStringArray("4.1")
+config/features=PackedStringArray("4.2")
 
 [rendering]
 
