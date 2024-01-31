@@ -25,8 +25,8 @@ enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 # get the node only once and store its reference in a variable than it is to
 # get it every time we need to access it, which is helpful for project managers
 # who want to optimize their code.
-@onready var _info_label = $Label
-@onready var _component_list = $ComponentList
+@onready var _info_label = $Container/Label
+@onready var _component_list = $Container/ComponentList
 @onready var _attribution_popup = $AttributionDialog
 @onready var _attribution_textbox = $AttributionDialog/TextBox
 
