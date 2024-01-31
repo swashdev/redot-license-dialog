@@ -3,7 +3,7 @@ extends Window
 
 
 # Source: https://github.com/swashdev/godot-license-dialog
-# Version 4.0.0-dev.1 - Currently in development.
+# Version 4.0.0 - Tested on Godot Engine 4.0-stable
 
 
 # An enum used by the `_read_copyright_file` function to determine what kind of
