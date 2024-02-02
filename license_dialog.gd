@@ -295,13 +295,13 @@ func _read_copyright_file():
 						full_paragraph["copyright"].append( copyright )
 	
 					var license_line_count: int = 0
-					var license = ""
+					var full_license = ""
 					for license_line in license_paragraph:
 						if license_line_count > 0:
-							license += "\n    "
-						license += license_line
+							full_license += "\n    "
+						full_license += license_line
 						license_line_count += 1
-					full_paragraph["license"] = license
+					full_paragraph["license"] = full_license
 	
 					for comment in comment_paragraph:
 						if not project_components.has( comment ):
