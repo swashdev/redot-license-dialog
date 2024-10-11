@@ -1,3 +1,11 @@
+# Redot editor files & folders
 .import
 .godot/
 .editorconfig
+
+# Zipped packages for release
+*.zip
+*.7z
+*.gz
+*.xz
+*.bz2
