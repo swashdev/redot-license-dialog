@@ -25,8 +25,7 @@ Upstream-Name: Godot Unofficial License Dialog
 Upstream-Contact: Philip Pavlick <swashdev@pm.me>
 Source: https://github.com/swashdev/godot-license-dialog
 
-Files: ./license_dialog.gd
- ./license_dialog.tscn
+Files: addons/swashberry/license_dialog/*
 Comment: Godot Unofficial License Dialog
 Copyright: 2021, 2024 Philip Pavlick
 License: Unlicense

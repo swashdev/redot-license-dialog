@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://ctloeh3sdqj7l"]
 
 [ext_resource type="Script" path="res://sample_project/sample_main_node.gd" id="1"]
-[ext_resource type="PackedScene" uid="uid://bs4fpjte0ug28" path="res://license_dialog.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://bs4fpjte0ug28" path="res://addons/swashberry/license_dialog/license_dialog.tscn" id="2"]
 
 [node name="TestMainNode" type="Node2D"]
 script = ExtResource("1")

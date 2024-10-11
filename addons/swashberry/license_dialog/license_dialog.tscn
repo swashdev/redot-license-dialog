@@ -1,10 +1,10 @@
 [gd_scene load_steps=2 format=3 uid="uid://bs4fpjte0ug28"]
 
-[ext_resource type="Script" path="res://license_dialog.gd" id="1"]
+[ext_resource type="Script" path="res://addons/swashberry/license_dialog/license_dialog.gd" id="1_1s2wi"]
 
 [node name="LicenseDialog" type="Window"]
 size = Vector2i(600, 460)
-script = ExtResource("1")
+script = ExtResource("1_1s2wi")
 
 [node name="Container" type="VSplitContainer" parent="."]
 anchors_preset = 15
