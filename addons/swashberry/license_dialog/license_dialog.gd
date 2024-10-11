@@ -3,8 +3,8 @@ extends Window
 
 
 # Source: https://github.com/swashdev/redot-license-dialog
-# Version 4.0.1-dev.1
-# Tested on Redot 4.3
+# Version 4.0.1-pre.1
+# Tested on Redot prerelease builds.
 
 
 # An enum used by the `_read_copyright_file` function to determine what kind of
