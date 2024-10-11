@@ -2,9 +2,9 @@ extends Window
 # A dialog which displays a human-readable list of attribution notices.
 
 
-# Source: https://github.com/swashdev/godot-license-dialog
+# Source: https://github.com/swashdev/redot-license-dialog
 # Version 4.0.1-dev.1
-# Requires Godot 4.0-stable - Tested on Godot 4.2-stable
+# Tested on Redot 4.3
 
 
 # An enum used by the `_read_copyright_file` function to determine what kind of
@@ -12,7 +12,7 @@ extends Window
 enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 
 # The name of the project which will be used.  If left blank, this value will be
-# replaced with the name of the Godot Engine project.
+# replaced with the name of the Redot Engine project.
 @export var project_name: String = "" : \
 		set = set_project_name, get = get_project_name
 
@@ -38,11 +38,11 @@ enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 var project_components: Dictionary = {}
 var project_components_tree: TreeItem
 
-# A dictionary which will store licensing information for the Godot Engine,
+# A dictionary which will store licensing information for the Redot Engine,
 # parsed from data collected from the engine itself, and a corresponding
 # TreeItem which will display this information.
-var _godot_components: Dictionary = {}
-var _godot_components_tree: TreeItem
+var _redot_components: Dictionary = {}
+var _redot_components_tree: TreeItem
 
 # A dictionary which will store the full text of the licensing gathered from
 # the above sources, and a TreeItem which will display this information.
@@ -76,22 +76,22 @@ func _ready():
 						project_components_tree )
 				component_item.set_text( 0, component )
 
-	# Create a subtree for the Godot Engine components list.
-	_godot_components_tree = _component_list.create_item( root )
-	_godot_components_tree.set_text( 0, "Godot Engine" )
-	_godot_components_tree.set_selectable( 0, false )
+	# Create a subtree for the Redot Engine components list.
+	_redot_components_tree = _component_list.create_item( root )
+	_redot_components_tree.set_text( 0, "Redot Engine" )
+	_redot_components_tree.set_selectable( 0, false )
 
-	# Populate the Godot Engine components subtree.
+	# Populate the Redot Engine components subtree.
 	var components: Array = Engine.get_copyright_info()
 	for component in components:
-		var component_item = _component_list.create_item( _godot_components_tree
+		var component_item = _component_list.create_item( _redot_components_tree
 				)
 		component_item.set_text( 0, component["name"] )
-		_godot_components[component["name"]] = component["parts"]
+		_redot_components[component["name"]] = component["parts"]
 
 	# The `_licenses` dictionary has already been populated by
 	# `_read_copyright_file` but still needs to be populated with licenses from
-	# the Godot Engine.
+	# the Redot Engine.
 	var license_info: Dictionary = Engine.get_license_info()
 	var keys = license_info.keys()
 	var key_count: int = keys.size()
@@ -141,8 +141,8 @@ func _on_ComponentList_item_selected():
 	var comp_title: String = selected.get_text( 0 )
 	var parent_title: String = parent.get_text( 0 )
 	
-	if parent_title == "Godot Engine":
-		_display_game_component_info(comp_title, _godot_components[comp_title])
+	if parent_title == "Redot Engine":
+		_display_game_component_info(comp_title, _redot_components[comp_title])
 	elif parent_title == "Licenses":
 		_display_license_info(comp_title)
 	else:

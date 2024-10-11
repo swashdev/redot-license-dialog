@@ -5,6 +5,7 @@
 [node name="LicenseDialog" type="Window"]
 size = Vector2i(600, 460)
 script = ExtResource("1_1s2wi")
+copyright_file = "res://COPYRIGHT.txt"
 
 [node name="Container" type="VSplitContainer" parent="."]
 anchors_preset = 15
@@ -15,7 +16,7 @@ grow_vertical = 2
 
 [node name="Label" type="Label" parent="Container"]
 layout_mode = 2
-text = "Clicking one of the buttons below will display licensing information for individual components of this project and the engine it is built on, the Godot Engine."
+text = "Clicking one of the buttons below will display licensing information for individual components of this project and the engine it is built on, the Redot Engine."
 autowrap_mode = 2
 
 [node name="ComponentList" type="Tree" parent="Container"]
