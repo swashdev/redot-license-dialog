@@ -83,7 +83,7 @@ a reference, or refer to the format specification
 [here][Debian copyright file format].
 
 [the sample COPYRIGHT.txt]: ../COPYRIGHT.txt
-[the Redot Engine's COPYRIGHT.txt]: https://github.com/Redot-Engine/redot-engine/blob/redot-rebranding/COPYRIGHT.txt
+[the Redot Engine's COPYRIGHT.txt]: https://github.com/Redot-Engine/redot-engine/blob/master/COPYRIGHT.txt
 [Debian copyright file format]: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 **Note:**
