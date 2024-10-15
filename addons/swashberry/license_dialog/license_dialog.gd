@@ -3,7 +3,7 @@ extends Window
 
 
 # Source: https://github.com/swashdev/redot-license-dialog
-# Version 4.0.1-pre.1
+# Version 4.0.1-pre.2.dev
 # Tested on Redot prerelease builds.
 
 
