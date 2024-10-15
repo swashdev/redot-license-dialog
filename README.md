@@ -108,7 +108,7 @@ OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE,
 ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR
 OTHER DEALINGS IN THE SOFTWARE.
 
-[Redot]: https://github.com/Redot-Engine/
+[Redot]: https://www.redotengine.org/
 [redot source]: https://github.com/Redot-Engine/redot-engine/
 [debian license file format]: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 [Getting Started]: docs/GETTING_STARTED.md
