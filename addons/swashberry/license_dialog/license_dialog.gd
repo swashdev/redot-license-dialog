@@ -12,6 +12,8 @@ extends Window
 # line is being read at the time.
 enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 
+@export_category("License Dialog")
+
 # The name of the project which will be used.  If left blank, this value will be
 # replaced with the name of the Redot Engine project.
 @export var project_name: String = "" : \

@@ -79,7 +79,7 @@ keep its default name.
 
 <img style = "margin: 0 auto" src = "screenshots/getting_started_02.png" title = "The Inspector dock in a Redot Engine project, showing some fields the user can modify to customize a `LicenseDialog` node." />
 
-Under "Script Variables" you'll see some variables which you can modify by
+Under "License Dialog" you'll see some variables which you can modify by
 typing some values into some text boxes.
 
 #### Project Name
