@@ -14,20 +14,29 @@ enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 
 @export_category("License Dialog")
 
-# The name of the project which will be used.  If left blank, this value will be
-# replaced with the name of the Redot Engine project.
+## The name of the project which will be used.[br]
+## If left blank, this value will be replaced with the project name from your
+## project settings.
 @export_placeholder("(Optional)") var project_name: String = "" : \
 		set = set_project_name, get = get_project_name
 
-# The path to a file containing licensing information for the game.
+## The path to a file containing licensing information for the project.[br]
+## If left blank, no copyright information for your project will be included
+## by default.  The Redot Engine info will be included regardless.[br]
+## If the file name starts with "res://", the engine will assume
+## that this file will be exported with the project file (.pck).
 @export_file var copyright_file =  "res://COPYRIGHT.txt" : \
 		set = set_copyright_file, get = get_copyright_file
 
 
-# A dictionary which will store licensing information for the game, parsed from
-# the game copyright file, and a corresponding TreeItem which will display this
-# information.
+## A dictionary which will store licensing information for your project, to be
+## displayed by the license dialog.[br]
+## Under normal circumstances, you should never update this manually except by
+## modifying this script file directly.
 var project_components: Dictionary = {}
+## A UI component which stores the information parsed from
+## [member project_components].[br]
+## It is [b]strongly recommended[/b] that you not modify this manually.
 var project_components_tree: TreeItem
 
 
@@ -53,22 +62,34 @@ var _licenses: Dictionary = {}
 var _licenses_tree: TreeItem
 
 
+## Sets the project name that will be displayed in the popup dialog.[br]
+## [b]Note:[/b] This [i]will not[/i] update the information in the popup dialog
+## for you.
 func set_project_name( new_name: String ):
 	project_name = new_name
 
 
+## Returns the project name as it was given to the license dialog.
 func get_project_name() -> String:
 	return project_name
 
 
+## Sets the path to the copyright file.[br]
+## [b]Note:[/b] This [i]will not[/i] update the information in the popup dialog
+## for you.
 func set_copyright_file( file_path: String ):
 	copyright_file = file_path
 
 
+## Returns the path to the copyright file as it was given to the license
+## dialog.
 func get_copyright_file() -> String:
 	return copyright_file
 
 
+## Sets the text of the label which appears above the component list in the
+## license dialog.[br]
+## Equivalent to [code]$LicenseDialog/Container/Label.set_text()[/code]
 func set_label_text( text: String ):
 	_info_label.text = text
 
