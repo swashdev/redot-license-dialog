@@ -12,9 +12,9 @@ aids and additional information.
 
 This documentation assumes you have a basic grasp on how to use the Redot Engine
 editor.  If you don't know how to use the Redot Engine editor, I recommend you
-read the [Godot Engine documentation](https://docs.godotengine.org/en/4.3/).
-The Godot Engine is built identically to Redot, so their documentation will do
-fine.
+read the [Redot Engine documentation][redot-docs].
+
+[redot-docs]: https://docs.redotengine.org/en/stable/
 
 ## Basic Setup
 
@@ -77,13 +77,14 @@ license texts for your project (*not* the Redot Engine).
 
 The file in question needs to be formatted in a specific way in order for the
 `LicenseDialog` to read it properly.  More detailed information will be given in
-future versions of this documentation, but for now you can use [the sample
-COPYRIGHT.txt] included with the addon or [the Redot Engine's COPYRIGHT.txt] as
+future versions of this documentation, but for now you can use
+[the sample COPYRIGHT.txt][sample-copyright-file] included with the addon or
+[the Redot Engine's COPYRIGHT.txt][redot-copyright-file] as
 a reference, or refer to the format specification
 [here][Debian copyright file format].
 
-[the sample COPYRIGHT.txt]: ../COPYRIGHT.txt
-[the Redot Engine's COPYRIGHT.txt]: https://github.com/Redot-Engine/redot-engine/blob/master/COPYRIGHT.txt
+[sample-copyright-file]: ../COPYRIGHT.txt
+[redot-copyright-file]: https://github.com/Redot-Engine/redot-engine/blob/master/COPYRIGHT.txt
 [Debian copyright file format]: https://www.debian.org/doc/packaging-manuals/copyright-format/1.0/
 
 **Note:**
@@ -124,8 +125,9 @@ the screenshot below.
 
 ### Implementing the Popup
 
-The `LicenseDialog` node is a node of type `WindowDialog`, a class that comes
-packaged with the Godot Engine which is used to display popup windows.
+The `LicenseDialog` node is a node of type `Window` (like the windows used by
+desktop applications), a class that comes packaged with the Godot Engine which
+is used to display popup windows.
 
 To add the `LicenseDialog` to your project, add it to another node, perhaps
 containing the main menu.  After this, you can show it to the user by simply
@@ -141,10 +143,10 @@ func _on_LegalStuffButton_pressed():
 	$LicenseDialog.popup_centered()
 ```
 
-You can find more information about the `WindowDialog` class by visiting its
-page in [the Godot Engine documentation][WindowDialog].
+You can find more information about the `Window` class by visiting its page in
+[the Redot Engine documentation][redot-window-docs].
 
-[WindowDialog]: https://docs.godotengine.org/en/4.3/classes/class_windowdialog.html
+[redot-window-docs]: https://docs.redotengine.org/en/stable/classes/class_window
 
 **Helpful Tip**:
 You can change what type of node the `LicenseDialog` is by right-clicking it and
