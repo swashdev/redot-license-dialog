@@ -24,6 +24,13 @@ enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 		set = set_copyright_file, get = get_copyright_file
 
 
+# A dictionary which will store licensing information for the game, parsed from
+# the game copyright file, and a corresponding TreeItem which will display this
+# information.
+var project_components: Dictionary = {}
+var project_components_tree: TreeItem
+
+
 # These variables act as shortcuts to nodes within the LicenseDialog which we
 # will be accessing frequently.  The reason we do this is that it's cheaper to
 # get the node only once and store its reference in a variable than it is to
@@ -33,13 +40,6 @@ enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 @onready var _component_list = $Container/ComponentList
 @onready var _attribution_popup = $AttributionDialog
 @onready var _attribution_textbox = $AttributionDialog/TextBox
-
-
-# A dictionary which will store licensing information for the game, parsed from
-# the game copyright file, and a corresponding TreeItem which will display this
-# information.
-var project_components: Dictionary = {}
-var project_components_tree: TreeItem
 
 # A dictionary which will store licensing information for the Redot Engine,
 # parsed from data collected from the engine itself, and a corresponding
@@ -51,6 +51,26 @@ var _redot_components_tree: TreeItem
 # the above sources, and a TreeItem which will display this information.
 var _licenses: Dictionary = {}
 var _licenses_tree: TreeItem
+
+
+func set_project_name( new_name: String ):
+	project_name = new_name
+
+
+func get_project_name() -> String:
+	return project_name
+
+
+func set_copyright_file( file_path: String ):
+	copyright_file = file_path
+
+
+func get_copyright_file() -> String:
+	return copyright_file
+
+
+func set_label_text( text: String ):
+	_info_label.text = text
 
 
 func _ready():
@@ -116,26 +136,6 @@ func _ready():
 		var license_item = _component_list.create_item( _licenses_tree )
 		license_item.set_text( 0, keys[index] )
 		license_item.set_selectable( 0, true )
-
-
-func set_project_name( new_name: String ):
-	project_name = new_name
-
-
-func get_project_name() -> String:
-	return project_name
-
-
-func set_copyright_file( file_path: String ):
-	copyright_file = file_path
-
-
-func get_copyright_file() -> String:
-	return copyright_file
-
-
-func set_label_text( text: String ):
-	_info_label.text = text
 
 
 func _on_ComponentList_item_selected():
