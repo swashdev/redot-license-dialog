@@ -3,10 +3,11 @@
 This file will give you basic setup instructions so you can use the License
 Dialog for Redot addon in your game or other project.
 
-It is recommended that you read this document in a Markdown reader or on the
-project's [GitHub](https://github.com/swashdev/redot-license-dialog), as
-it contains embedded images and hyperlinks which will provide you with visual
-aids and additional information.
+It is recommended that you read this document in a Markdown reader or
+[on the project's GitHub][read-on-gh], as it contains embedded images and
+hyperlinks which will provide you with visual aids and additional information.
+
+[read-on-gh]: https://github.com/swashdev/redot-license-dialog/blob/4.x/docs/GETTING_STARTED.md
 
 ## Before Beginning
 
