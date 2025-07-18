@@ -16,7 +16,7 @@ enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 
 # The name of the project which will be used.  If left blank, this value will be
 # replaced with the name of the Redot Engine project.
-@export var project_name: String = "" : \
+@export_placeholder("(Optional)") var project_name: String = "" : \
 		set = set_project_name, get = get_project_name
 
 # The path to a file containing licensing information for the game.
