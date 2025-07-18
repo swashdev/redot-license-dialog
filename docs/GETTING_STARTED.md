@@ -26,8 +26,11 @@ really need are `license_dialog.gd` (the script file) and `license_dialog.tscn`
 (the scene file for the `LicenseDialog` node) from the addons folder.  
 Despite this addon and sample project being public domain software, you may
 need to retain attribution and licensing notices in some jurisdictions, so I
-strongly recommend including the `COPYRIGHT.txt` file as well, especially if
+strongly recommend including the `COPYRIGHT.txt` file as well, or copying the
+relevant contents into [your own copyright file][copyright-file], especially if
 you intend for your project to be open-source.
+
+[copyright-file]: #copyright-file
 
 Drop the files into your Redot Engine project folder.  Although you can place
 them in any folder you wish, I recommend keeping them in the
