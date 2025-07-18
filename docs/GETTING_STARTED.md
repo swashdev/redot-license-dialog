@@ -94,7 +94,7 @@ contains all of the information it needs to display attribution notices and
 license texts for your project (*not* the Redot Engine).
 
 The file in question needs to be formatted in a specific way in order for the
-`LicenseDialog` to read it properly.  More detailed information will be given in
+`LicenseDialog` to read it properly.  More detailed information may be given in
 future versions of this documentation, but for now you can use
 [the sample COPYRIGHT.txt][sample-copyright-file] included with the addon or
 [the Redot Engine's COPYRIGHT.txt][redot-copyright-file] as
