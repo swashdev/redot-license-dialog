@@ -18,7 +18,7 @@ enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 		set = set_project_name, get = get_project_name
 
 # The path to a file containing licensing information for the game.
-@export_file var copyright_file =  "" : \
+@export_file var copyright_file =  "res://COPYRIGHT.txt" : \
 		set = set_copyright_file, get = get_copyright_file
 
 
