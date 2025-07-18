@@ -28,6 +28,16 @@ enum { _FILE, _COPYRIGHT, _COMMENT, _LICENSE }
 @export_file var copyright_file =  "res://COPYRIGHT.txt" : \
 		set = set_copyright_file, get = get_copyright_file
 
+## If this is checked, the license dialog will immediately populate itself with
+## copyright information for your project at runtime.[br]
+## If you need to populate the copyright information manually for any reason,
+## you can leave this unchecked.  However, [b]you will need to call
+## [method update_copyright_info] manually[/b].[br]
+## [b]Important note:[/b] If [member copyright_file] is set, that
+## copyright file will be used to populate the project componets list at
+## runtime, regardless of whether this variable is true or not.
+@export var update_on_ready: bool = true
+
 
 ## A dictionary which will store licensing information for your project, to be
 ## displayed by the license dialog.[br]
@@ -94,31 +104,37 @@ func set_label_text( text: String ):
 	_info_label.text = text
 
 
-func _ready():
-	# Set the label text appropriately.
-	var game_name = project_name
-	if game_name == "":
-		game_name = ProjectSettings.get_setting( "application/config/name" )
-
+## Updates the copyright component items in the dialog box.[br]
+## This function reads in the data stored in [member project_components]
+## and combines in with the date acquired from
+## [method Engine.get_copyright_info] to populate the licensing information in
+## the popup dialog.[br]
+## If [param warn_if_empty] is [code]true[/code], a warning will be triggered
+## if [member project_components] is empty when this function is called.[br]
+## If [member update_on_ready] is set to [code]true[/code], this function will
+## be called immediately when the node is ready.[br]
+## [b]Note:[/b] this is an expensive operation which updates all of the
+## licensing information at once, even if that information has already been
+## populated.  Ideally this function should only be called once in your
+## project.
+func update_copyright_info(warn_if_empty: bool = true):
 	# Create the root for the component list tree.
+	_component_list.clear()
 	var root = _component_list.create_item()
 
-	# Populate the game components & licensing information from the copyright
-	# file.
-	if copyright_file != "":
-		_read_copyright_file()
-
-		if project_components.size() == 0:
-			push_warning( "Couldn't read any copyright data for this game!" )
-		else:
-			# Create a subtree for the project components list.
-			project_components_tree = _component_list.create_item( root )
-			project_components_tree.set_text( 0, game_name )
-			project_components_tree.set_selectable( 0, false )
-			for component in project_components:
-				var component_item = _component_list.create_item(
-						project_components_tree )
-				component_item.set_text( 0, component )
+	if project_components.size() == 0:
+		if warn_if_empty:
+			push_warning( "Tried to update dialog items, but project " + \
+					"component list is empty!" )
+	else:
+		# Create a subtree for the project components list.
+		project_components_tree = _component_list.create_item( root )
+		project_components_tree.set_text( 0, project_name )
+		project_components_tree.set_selectable( 0, false )
+		for component in project_components:
+			var component_item = _component_list.create_item(
+					project_components_tree )
+			component_item.set_text( 0, component )
 
 	# Create a subtree for the Redot Engine components list.
 	_redot_components_tree = _component_list.create_item( root )
@@ -133,9 +149,8 @@ func _ready():
 		component_item.set_text( 0, component["name"] )
 		_redot_components[component["name"]] = component["parts"]
 
-	# The `_licenses` dictionary has already been populated by
-	# `_read_copyright_file` but still needs to be populated with licenses from
-	# the Redot Engine.
+	# The `_licenses` dictionary has already been populated, but still needs to
+	# be updated with licenses from the Redot Engine.
 	var license_info: Dictionary = Engine.get_license_info()
 	var keys = license_info.keys()
 	var key_count: int = keys.size()
@@ -157,6 +172,22 @@ func _ready():
 		var license_item = _component_list.create_item( _licenses_tree )
 		license_item.set_text( 0, keys[index] )
 		license_item.set_selectable( 0, true )
+
+
+func _ready():
+	if project_name == "":
+		project_name = ProjectSettings.get_setting( "application/config/name" )
+
+	# Populate the game components & licensing information from the copyright
+	# file.
+	if copyright_file != "":
+		_read_copyright_file()
+
+		if project_components.size() == 0:
+			push_warning( "Couldn't read any copyright data for this game!" )
+
+	if update_on_ready:
+		update_copyright_info(false)
 
 
 func _on_ComponentList_item_selected():
