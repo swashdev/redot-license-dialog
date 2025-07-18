@@ -34,11 +34,14 @@ them in any folder you wish, I recommend keeping them in the
 `addons/swashberry/license_dialog` folder that they came in.  There are two
 main reasons for this:
 
-1. It is already standard practice for Godot Engine and Redot Engine projects
-   to include third-party assets in the `addons` folder, and...
+1. It is already [standard practice][addons-folder] for Godot Engine and Redot
+   Engine projects to include third-party assets in the `addons` folder,
+   and...
 
 2. By keeping the files in this folder, you avoid having to correct their
    references to each other in your own project.
+
+[addons-folder]: https://docs.redotengine.org/en/stable/tutorials/best_practices/project_organization#style-guide
 
 If you want them to be in different folders, I recommend moving them to the
 desired locations from within the Redot Engine editor by right-clicking
