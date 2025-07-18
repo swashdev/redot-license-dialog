@@ -58,6 +58,13 @@ How To Use It
 Before you do anything else, please read the [Disclaimer](#disclaimer) below to
 make sure you fully understand what this addon does and does not do.
 
+You should also check to see if your version of Redot Engine is compatible
+with [the current version][version-info] of License Dialog for Redot.  If it
+isn't, you can find a compatible version in the [Releases][releases] tab.
+
+[version-info]: docs/version_info.md
+[releases]: https://github.com/swashdev/redot-license-dialog/releases
+
 To use this addon in your project, copy the [addons](addons) folder to your
 project.  These are the only files you really need &ndash; everything else is
 just there for the sample project.
