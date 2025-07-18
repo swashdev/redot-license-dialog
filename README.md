@@ -1,11 +1,11 @@
 License Dialog for Redot
 ========================
 
-If, like me, you want to support open-source game engines like [Redot], but you
-worry about displaying proper licensing information for any project you do
-which includes third-party software, then this project is for you.  Software
-licenses can be a real pain in the neck sometimes, and it would be a lot better
-if it was easier to remain compliant with them.
+If, like me, you want to support open-source game engines like [Redot][Redot],
+but you worry about displaying proper licensing information for any project
+you do which includes third-party software, then this project is for you.
+Software licenses can be a real pain in the neck sometimes, and it would be a
+lot better if it was easier to remain compliant with them.
 
 The Redot Engine uses a lot of third-party modules and components which all use
 slightly different software licenses and affect what licensing information you
