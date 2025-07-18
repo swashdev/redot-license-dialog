@@ -30,9 +30,18 @@ strongly recommend including the `COPYRIGHT.txt` file as well, especially if
 you intend for your project to be open-source.
 
 Drop the files into your Redot Engine project folder.  Although you can place
-them in any folder you wish, I recommend placing them in the same folder to
-begin with.  If you want them to be in separate folders, move them into their
-appropriate directories from within the Redot Engine editor by right-clicking
+them in any folder you wish, I recommend keeping them in the
+`addons/swashberry/license_dialog` folder that they came in.  There are two
+main reasons for this:
+
+1. It is already standard practice for Godot Engine and Redot Engine projects
+   to include third-party assets in the `addons` folder, and...
+
+2. By keeping the files in this folder, you avoid having to correct their
+   references to each other in your own project.
+
+If you want them to be in different folders, I recommend moving them to the
+desired locations from within the Redot Engine editor by right-clicking
 them in the FileSystem dock and clicking "Move To."  If you do it this way, the
 Redot Engine will automatically fix references to the script file within the
 `LicenseDialog` scene for you.
@@ -49,11 +58,18 @@ After you've got the scene and script files where you want them in your project
 folders, it's time to give the `LicenseDialog` node any information it needs
 about your project.
 
-Open up the `license_dialog.tscn` file in the Redot Engine editor and look in
-the Inspector dock.  By default, this dock will be in the upper-right in the
-"Inspector" tab.  You'll notice that it says `LicenseDialog` at the top, the
-default name for the root node of this scene.  You can rename it if you wish,
-but for our purposes we'll assume you let it keep its default name.
+It is best practice to create an instance of the `LicenseDialog` scene (the
+one from the `license_dialog.tscn` file in whichever scene you want it to pop
+up in (say the main menu, for example), but you can also edit the
+`license_dialog.tscn` file directly if you wish, since you should only need one
+anyway.
+
+However you choose to do it, open up the `LicenseDialog` scene in the Redot
+Engine editor and look in the Inspector dock.  By default, this dock will be
+in the upper-right in the "Inspector" tab.  You'll notice that it says
+`LicenseDialog` at the top, the default name for the root node of this scene.
+You can rename it if you wish, but for our purposes we'll assume you let it
+keep its default name.
 
 <img style = "margin: 0 auto" src = "screenshots/getting_started_02.png" title = "The Inspector dock in a Redot Engine project, showing some fields the user can modify to customize a `LicenseDialog` node." />
 
