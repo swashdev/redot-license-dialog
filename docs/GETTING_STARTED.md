@@ -65,7 +65,7 @@ folders, it's time to give the `LicenseDialog` node any information it needs
 about your project.
 
 It is best practice to create an instance of the `LicenseDialog` scene (the
-one from the `license_dialog.tscn` file in whichever scene you want it to pop
+one from the `license_dialog.tscn` file) in whichever scene you want it to pop
 up in (say the main menu, for example), but you can also edit the
 `license_dialog.tscn` file directly if you wish, since you should only need one
 anyway.
