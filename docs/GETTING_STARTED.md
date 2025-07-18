@@ -23,10 +23,11 @@ read the [Redot Engine documentation][redot-docs].
 
 If you haven't already, start by downloading the project.  The only files you
 really need are `license_dialog.gd` (the script file) and `license_dialog.tscn`
-(the scene file for the `LicenseDialog` node) from the addons folder.  Despite
-this addon and sample project being public domain software, you may need
-to retain attribution and licensing notices in some jurisdictions, so you may
-want to download the `COPYRIGHT.txt` file as well.
+(the scene file for the `LicenseDialog` node) from the addons folder.  
+Despite this addon and sample project being public domain software, you may
+need to retain attribution and licensing notices in some jurisdictions, so I
+strongly recommend including the `COPYRIGHT.txt` file as well, especially if
+you intend for your project to be open-source.
 
 Drop the files into your Redot Engine project folder.  Although you can place
 them in any folder you wish, I recommend placing them in the same folder to
