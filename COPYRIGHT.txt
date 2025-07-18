@@ -27,7 +27,7 @@ Source: https://github.com/swashdev/redot-license-dialog
 
 Files: addons/swashberry/license_dialog/*
 Comment: License Dialog for Redot
-Copyright: 2021, 2024 Philip Pavlick
+Copyright: 2021, 2024-2025 Philip Pavlick
 License: Unlicense
 
 Files: ./project.godot
