@@ -4,7 +4,8 @@ extends Window
 
 # Source: https://github.com/swashdev/redot-license-dialog
 # Version 4.0.1
-# Tested on Redot prerelease builds.
+# Tested on Godot Engine 4.0-stable and Redot Engine 4.3-stable
+# Works, but needs to be updated, for Redot Engine 4.4-alpha.2
 
 
 # An enum used by the `_read_copyright_file` function to determine what kind of
